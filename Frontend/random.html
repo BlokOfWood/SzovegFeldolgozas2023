@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Szövegfeldolgozás</title>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <div id="controls">
+        <form>
+            <label id="img-label">
+                Kép feltöltés
+                <input type="file" id="img" name="img" accept="image/*">
+            </label>
+            <label id="translate-label">
+                Fordítási nyelv:
+                <select id="translate-lang">
+                    <option value="base">Válasszon nyelvet...</option>
+                    <option value="hu-eng">Magyar-Angol</option>
+                    <option value="hu-sp">Magyar-Spanyol</option>
+                    <option value="hu-fr">Magyar-Francia</option>
+                </select>
+            </label>
+            <label id="submit-label">
+                <button type="submit" id="submit-btn">Küldés</button>
+            </label>
+        </form>
+    </div>
+</body>
+</html>

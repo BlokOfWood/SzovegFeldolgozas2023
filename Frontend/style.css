@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+#container {
+    width: 100%;
+    height: 900px;
+}
+
+#container, #controls {
+    margin: 0.5em;
+    border: thick solid darkblue;
+    background-color: aliceblue;
+}
+
+#controls {
+    padding: 0.5em;
+    text-align: center;
+    align-self: self-start;
+}
+
+#img-label {
+    border: 2px solid black;
+    cursor: pointer;
+    width: auto;
+    border-radius: 0.5em;
+    padding: 0.25em;
+    background-color: azure;
+}
+
+#img {
+    display: none;
+}
+
+#translate-label {
+    display: inline-block;
+    padding: 0.5em;
+    font-family: monospace;
+    font-size: large;
+}
+
+#submit-label {
+    display: inline-block;
+}
+
+#submit-btn {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
