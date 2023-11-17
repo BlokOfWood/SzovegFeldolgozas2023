@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="a.js"></script>
+</head>
+<body>
+    <form action="/translate" method="post" enctype="multipart/form-data">
+        <input type="file" name="document">
+        <select name="from_lang">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+        </select>
+        <select name="to_lang">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+        </select>
+        <select name="document_type">
+            <option value="handwritten">Handwritten</option>
+            <option value="printed">Printed</option>
+        </select>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
