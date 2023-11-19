@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Szövegfeldolgozás</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="translated-text"></div>
+
+            <div id="controls">
+                <form action="/translate" method="post" enctype="multipart/form-data">
+                    <label>
+                        <h4>Upload Image</h4>
+                        <input type="file" name="document" accept="image/*" />
+                        <h4>Translate from</h4>
+                        <select name="from_lang">
+                            <option value="hu">Hungarian</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <h4>Translate to</h4>
+                        <select name="to_lang">
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                            <option value="sp">Spanish</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <h4>Style</h4>
+                        <select name="document_type">
+                            <option value="handwritten">Handwritten</option>
+                            <option value="printed">Printed</option>
+                        </select>
+                    </label>
+
+                    <input type="submit" value="submit" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+body {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    height: 100%;
+    padding: 10px;
+}
+
+#translated-text {
+    flex-grow: 3;
+    min-width: 200px;
+}
+
+#translated-text, #controls {
+    border: thick solid darkblue;
+    background-color: aliceblue;
+}
+
+#controls {
+    padding: 0.5vw;
+    align-self: self-start;
+    text-align: center;
+    height: 100%;
+    overflow: auto;
+    max-width: 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    padding: 0.2em;
+    margin-bottom: 0.3em;
+}
+
+h4 {
+    margin-bottom: 0;
+}
