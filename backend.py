@@ -1,8 +1,9 @@
-from bottle import route, run, post, static_file, request
+from bottle import route, run, post, static_file, request, template
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast
 import cv2
 import numpy as np
 import pytesseract
+import json
 
 
 @route('/<filename>')
@@ -24,12 +25,21 @@ def translate():
     nparr = np.frombuffer(img_str, np.uint8)
     img_np = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    detected_text = text_detection(img_np)
-    translated_text = translatorFunc(detected_text, from_lang, to_lang)
+    detected_text: str = text_detection(img_np)
+    translated_text: str = translatorFunc(detected_text, from_lang, to_lang)
 
     print("Detected text: " + detected_text)
 
-    return translated_text
+    detected_text = detected_text
+
+    data = {
+        "detected_text": detected_text,
+        "translated_text": translated_text
+    }
+
+
+    return json.dumps(data)
+    
 
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'

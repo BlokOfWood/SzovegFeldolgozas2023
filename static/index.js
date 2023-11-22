@@ -12,8 +12,10 @@ function formSubmit() {
     fetch('/translate', {
         method: 'POST',
         body: formData,
-    }).then(response => response.text()).then(result => {
-        document.getElementById('translated-text').innerHTML = result;
+    }).then(response => response.json()).then(result => {
+        const detectedText = result['detected_text'];
+        const translatedText = result['translated_text'];
+        document.getElementById('translated-text').innerHTML = detectedText + ' -> ' + translatedText;
     });
 
 }
