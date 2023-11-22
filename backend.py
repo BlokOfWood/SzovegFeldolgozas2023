@@ -15,6 +15,7 @@ def index():
 
 @post('/translate')
 def translate():
+    print("aaaaaa")
     document = request.files.get('document')
     from_lang = request.forms.get('from_lang')
     to_lang = request.forms.get('to_lang')
