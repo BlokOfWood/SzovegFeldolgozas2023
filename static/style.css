@@ -50,12 +50,12 @@ h4 {
 }
 
 #detected-dv::before {
-    content: "Image Text: ";
+    content: "Image Text:";
     text-decoration: underline;
 }
 
 #translated-dv::before {
-    content: "Translated Text: ";
+    content: "Translated Text:";
     text-decoration: underline;
 }
 

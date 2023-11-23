@@ -15,8 +15,8 @@ function formSubmit() {
     }).then(response => response.json()).then(result => {
         const detectedText = result['detected_text'];
         const translatedText = result['translated_text'];
-        document.getElementById('detected-dv').innerHTML = detectedText;
-        document.getElementById('translated-dv').innerHTML = translatedText;
+        document.getElementById('detected-dv').innerHTML = ' ' + detectedText;
+        document.getElementById('translated-dv').innerHTML = ' ' + translatedText;
     });
 
 }
