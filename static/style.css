@@ -18,7 +18,12 @@ body {
 
 #translated-text {
     flex-grow: 3;
-    min-width: 200px;
+    min-width: 50px;
+    word-wrap: break-word;
+    display: inline;
+    font-size: x-large;
+    font-family: monospace;
+    font-weight: bold;
 }
 
 #translated-text, #controls {
@@ -32,12 +37,7 @@ body {
     text-align: center;
     height: 100%;
     overflow: auto;
-    max-width: 300px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
+    min-width: 150px;
 }
 
 select {
@@ -47,4 +47,27 @@ select {
 
 h4 {
     margin-bottom: 0;
+}
+
+#detected-dv::before {
+    content: "Image Text: ";
+    text-decoration: underline;
+}
+
+#translated-dv::before {
+    content: "Translated Text: ";
+    text-decoration: underline;
+}
+
+#detected-dv {
+    overflow: auto;
+    height: 50%;
+    border-bottom: thick darkblue solid;
+    background-color: beige;
+}
+
+#translated-dv {
+    overflow: auto;
+    height: 50%;
+    background-color: blanchedalmond;
 }
