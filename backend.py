@@ -29,8 +29,6 @@ def translate():
     detected_text: str = text_detection(img_np)
     translated_text: str = translatorFunc(detected_text, from_lang, to_lang)
 
-    detected_text = detected_text
-
     data = {
         "detected_text": detected_text,
         "translated_text": translated_text
@@ -46,9 +44,9 @@ def text_detection(image):
     return text
 
 
-model = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-50-one-to-many-mmt", cache_dir="./cache").to("cuda")
+model = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-50-many-to-many-mmt", cache_dir="./cache").to("cuda")
 def translatorFunc(sentence, fromLang, toLang):
-    tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50-one-to-many-mmt", cache_dir="./cache", src_lang=fromLang)
+    tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50-many-to-many-mmt", cache_dir="./cache", src_lang=fromLang)
     model_inputs = tokenizer(sentence, return_tensors="pt")
     model_inputs.to("cuda")
     #the translation itself
